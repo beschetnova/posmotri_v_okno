@@ -154,7 +154,7 @@ input:focus {
   position: relative;
 }
 
-.search-form__checkbox:checked + search-form__pseudo-checkbox::after{
+.search-form__checkbox:checked + span::before{
   content: "";
   width: 15px;
   height: 15px;
