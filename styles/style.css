@@ -206,7 +206,7 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid #1b1919;
-  box-shadow: 0 0 0 1.5px #fff;
+  box-shadow: 0 0 0 2px #fff;
 }
 
 .content__details {
