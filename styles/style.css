@@ -50,10 +50,6 @@ ol {
   white-space: nowrap;
 } 
 
-input:focus {
-  outline: none;
-}
-
 .content {
   display: flex;
   width: 1140px;
@@ -104,15 +100,19 @@ input:focus {
   gap: 5px;
   width: fit-content;
   cursor: pointer;
+  padding: 1px;
 }
 
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
   text-decoration: underline;
 }
 
+.search-form__label:has(.search-form__pseudo-checkbox):active {
+  text-decoration: none;
+}
+
 .search-form__label:has(:focus-visible):focus-within {
-  border: 1px solid #fff;
-  padding: 2px;
+  outline: 1px solid #fff;
 }
 
 .search-form__label-text {
@@ -141,34 +141,39 @@ input:focus {
   border: 1px solid #fff;
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
 }
 
-.search-form__pseudo-checkbox {
+.search-form__checkbox + .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
   cursor: pointer;
-  position: relative;
 }
 
-.search-form__checkbox:checked + span::before{
-  content: "";
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
   width: 15px;
   height: 15px;
   background-color: #fff;
-  position: absolute;
-  top: 10%;
-  left: 5%;
+  align-self: center;
 }
 
 .button {
   cursor: pointer;
-  padding: 6px 0;
   background-color: transparent;
   border: 1px solid #fff;
+  padding: 6px 0;
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -183,7 +188,7 @@ input:focus {
 }
 
 .more-button {
-  width: 399px;
+  width: 100%;
 }
 
 .button:hover {
@@ -192,6 +197,7 @@ input:focus {
 
 .button:active {
   background-color: rgba(84, 80, 80, 1);
+  text-decoration: none;
 }
 
 .button:focus {
@@ -199,7 +205,8 @@ input:focus {
 }
 
 .button:focus-visible {
-  border: 3px double #fff;
+  outline: 1px solid #1b1919;
+  box-shadow: 0 0 0 1.5px #fff;
 }
 
 .content__details {
@@ -207,7 +214,7 @@ input:focus {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 26px;
+  gap: 22px;
 }
 
 .title {
@@ -233,6 +240,7 @@ input:focus {
   scrollbar-width: thin;
   scrollbar-color: rgba(84, 80, 80, 0.5) transparent;
   position: relative;
+  padding: 0 2px 2px 2px;
 }
 
 .content__list-item:not(:last-child) {
@@ -256,6 +264,7 @@ input:focus {
 
 .content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
+  text-decoration: none;
 }
 
 .content__card-link:focus {
@@ -263,7 +272,7 @@ input:focus {
 }
 
 .content__card-link:focus-visible {
-  border: 1px solid rgba(255, 255, 255, 1);
+  outline: 1px solid rgba(255, 255, 255, 1);
 }
 
 .content__video-card {
